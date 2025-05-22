@@ -6,6 +6,7 @@ import Image from "next/image"
 export default function LogoCarousel() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isPaused, setIsPaused] = useState(false)
+  const animationRef = useRef<number>()
 
   // Array of logos with normalized heights - making the bolt logo (3.svg) smaller
   const logos = [
@@ -24,45 +25,32 @@ export default function LogoCarousel() {
     { name: "Logo 6", src: "/logos/logo6.svg", height: 30 },
   ]
 
-  // Replace the useEffect hook with this simplified version that ensures the animation runs properly
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
 
-    // Animation function with increased speed
     const animate = () => {
-      if (!isPaused) {
+      if (!isPaused && container) {
+        // Check if we've scrolled past halfway point
         if (container.scrollLeft >= container.scrollWidth / 2) {
           container.scrollLeft = 0
         } else {
-          container.scrollLeft += 0.5 // Increased speed to be visible
+          container.scrollLeft += 0.5
         }
       }
-      animationId = requestAnimationFrame(animate)
+
+      // Continue the animation
+      animationRef.current = requestAnimationFrame(animate)
     }
 
-    // Start animation
-    let animationId = requestAnimationFrame(animate)
+    // Start the animation
+    animationRef.current = requestAnimationFrame(animate)
 
-    // Pause animation when not visible
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (!entries[0].isIntersecting && animationId) {
-          cancelAnimationFrame(animationId)
-          animationId = 0
-        } else if (entries[0].isIntersecting && !animationId) {
-          animationId = requestAnimationFrame(animate)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    observer.observe(container)
-
-    // Cleanup
+    // Cleanup function
     return () => {
-      if (animationId) cancelAnimationFrame(animationId)
-      observer.disconnect()
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
     }
   }, [isPaused])
 

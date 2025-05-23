@@ -1,50 +1,48 @@
+import { AlertTriangle, FileX, Bug } from "lucide-react"
+
 export default function ProblemSection() {
-  const painPoints = [
+  const problems = [
     {
-      icon: "💭",
-      text: "Hallucinated components",
-      description: "AI tools invent non-existent libraries and components",
+      icon: <FileX className="w-8 h-8" />,
+      title: "AI misses files it didn't see",
+      description:
+        "Your AI assistant only knows about files in the current context, leading to incomplete or broken code suggestions.",
     },
     {
-      icon: "🧩",
-      text: "Broken logic chains",
-      description: "Code that looks right but falls apart when connected",
+      icon: <Bug className="w-8 h-8" />,
+      title: "It breaks tests silently",
+      description:
+        "AI changes look good but break existing functionality. You only find out after running tests manually.",
     },
     {
-      icon: "📂",
-      text: "Lost prompts and unclear structure",
-      description: "No clear path from idea to implementation",
-    },
-    {
-      icon: "⛔",
-      text: "Lack of project direction",
-      description: "Endless tweaking without a coherent plan",
+      icon: <AlertTriangle className="w-8 h-8" />,
+      title: "You waste time debugging after 'Accept'",
+      description: "Every AI suggestion becomes a potential debugging session instead of a productivity boost.",
     },
   ]
 
   return (
-    <section id="problem" className="py-20 px-4 md:px-6 bg-gray-50">
-      <div className="container mx-auto max-w-5xl">
+    <section className="py-20 px-6 md:px-10 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">AI Coding is Powerful. But It's Easy to Get Lost.</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+            Why today's AI coding tools still cost you time
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Modern AI coding assistants like Cursor, Gemini, and Copilot are incredible. But they often hallucinate,
-            invent fake APIs, or rewrite your logic. You start fast — and end up confused.
+            Even the best AI assistants have blind spots that turn productivity gains into debugging sessions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {painPoints.map((point, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {problems.map((problem, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white p-8 rounded-lg border border-gray-200 hover:border-red-300 transition-colors shadow-sm"
             >
-              <div className="flex items-start gap-4">
-                <div className="text-3xl">{point.icon}</div>
-                <div>
-                  <h3 className="text-xl font-medium mb-2">{point.text}</h3>
-                  <p className="text-gray-600">{point.description}</p>
-                </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="p-3 bg-red-50 rounded-lg text-red-600 mb-5">{problem.icon}</div>
+                <h3 className="text-xl font-bold mb-3 text-black">{problem.title}</h3>
+                <p className="text-gray-600">{problem.description}</p>
               </div>
             </div>
           ))}

@@ -1,61 +1,69 @@
-export default function SolutionSection() {
-  const features = [
-    {
-      icon: "📘",
-      title: "Project blueprint from a short prompt",
-      description: "Turn vague ideas into structured project plans in minutes",
-    },
-    {
-      icon: "🧠",
-      title: "Auto-generated docs: PRDs, flows, prompts",
-      description: "Get comprehensive documentation that guides your development",
-    },
-    {
-      icon: "⚙️",
-      title: "Works with Cursor, Lovable, Windsurf, and more",
-      description: "Seamlessly integrate with your favorite AI coding tools",
-    },
-    {
-      icon: "📂",
-      title: "Download structured docs or copy to your tools",
-      description: "Export your project structure in multiple formats",
-    },
-  ]
+import { Map, Shield } from "lucide-react"
 
+export default function SolutionSection() {
   return (
-    <section id="solution" className="py-20 px-4 md:px-6">
-      <div className="container mx-auto max-w-5xl">
+    <section className="py-20 px-6 md:px-10">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Code Compass Keeps You on Track</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">Two layers of protection for AI coding</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            It creates a clear structure before you write a single line of code.
+            RepoScope + GuardRails work together to make AI coding safe and reliable.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-lg border border-gray-200 bg-white hover:border-blue-200 transition-colors"
-            >
-              <div className="flex items-start gap-4">
-                <div className="text-3xl">{feature.icon}</div>
-                <div>
-                  <h3 className="text-xl font-medium mb-2">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* RepoScope */}
+          <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-center mb-6">
+              <div className="p-3 bg-blue-50 rounded-lg text-blue-600 mr-4">
+                <Map className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-black">RepoScope</h3>
+            </div>
+            <p className="text-lg text-gray-700 mb-6">
+              Builds a live dependency map. Adds the right code to every AI prompt so it stops guessing.
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-center text-gray-600">
+                <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                <span>Smart context injection</span>
+              </div>
+              <div className="flex items-center text-gray-600">
+                <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                <span>Token-saving prompt shaping</span>
+              </div>
+              <div className="flex items-center text-gray-600">
+                <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                <span>Live dependency tracking</span>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
 
-        <div className="mt-16 relative w-full max-w-4xl mx-auto">
-          <div className="aspect-[16/9] rounded-lg bg-gray-100 overflow-hidden border border-gray-200">
-            <img
-              src="/placeholder.svg?height=720&width=1280&query=clean project structure diagram with compass navigation elements"
-              alt="Code Compass Project Structure"
-              className="w-full h-full object-cover"
-            />
+          {/* GuardRails */}
+          <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-center mb-6">
+              <div className="p-3 bg-green-50 rounded-lg text-green-600 mr-4">
+                <Shield className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-black">GuardRails</h3>
+            </div>
+            <p className="text-lg text-gray-700 mb-6">
+              Runs your unit tests in the background and blocks broken patches before they hit your repo.
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-center text-gray-600">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                <span>Pre-merge test validation</span>
+              </div>
+              <div className="flex items-center text-gray-600">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                <span>License-safe change logging</span>
+              </div>
+              <div className="flex items-center text-gray-600">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                <span>Real-time safety checks</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

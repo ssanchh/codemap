@@ -1,7 +1,13 @@
-import { Zap, FileText, TestTube, Shield, Code, Lock } from "lucide-react"
+import React from "react"
+import { Zap, FileText, Code, Lock, Map, Brain } from "lucide-react"
 
 export default function FeaturesSection() {
   const features = [
+    {
+      icon: <Map className="w-8 h-8" />,
+      title: "Live dependency mapping",
+      description: "Automatically builds and maintains a real-time map of your entire codebase structure",
+    },
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Smart context injection",
@@ -9,18 +15,13 @@ export default function FeaturesSection() {
     },
     {
       icon: <FileText className="w-8 h-8" />,
-      title: "Token-saving prompt shaping",
-      description: "Optimizes prompts to include only essential context, saving API costs",
+      title: "Token-optimized prompts",
+      description: "Shapes prompts to include only essential context, saving API costs",
     },
     {
-      icon: <TestTube className="w-8 h-8" />,
-      title: "Pre-merge test validation",
-      description: "Runs your test suite automatically before any AI changes are applied",
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "License-safe change logging",
-      description: "Tracks all modifications with proper attribution and compliance",
+      icon: <Brain className="w-8 h-8" />,
+      title: "Intelligent file selection",
+      description: "Understands which files matter for each AI request based on dependencies",
     },
     {
       icon: <Code className="w-8 h-8" />,
@@ -35,26 +36,66 @@ export default function FeaturesSection() {
   ]
 
   return (
-    <section className="py-20 px-6 md:px-10 bg-gray-50">
+    <section id="features" className="py-20 px-6 md:px-10 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">Everything you need for safe AI coding</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">Everything you need for smart AI coding</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive protection and optimization for your AI-assisted development workflow.
+            Comprehensive context awareness for your AI-assisted development workflow.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors shadow-sm"
-            >
-              <div className="p-3 bg-blue-50 rounded-lg text-blue-600 mb-4 w-fit">{feature.icon}</div>
-              <h3 className="text-lg font-bold mb-3 text-black">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+        {/* Feature Masonry Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
+          {/* Feature 1 - Large */}
+          <div className="md:col-span-3 bg-white p-8 rounded-xl border border-gray-200 shadow-sm flex">
+            <div className="p-4 bg-blue-50 rounded-xl text-blue-600 mr-6 h-fit">{features[0].icon}</div>
+            <div>
+              <h3 className="text-xl font-bold mb-3 text-black">{features[0].title}</h3>
+              <p className="text-gray-600">{features[0].description}</p>
             </div>
-          ))}
+          </div>
+
+          {/* Feature 2 - Medium */}
+          <div className="md:col-span-3 bg-white p-8 rounded-xl border border-gray-200 shadow-sm flex">
+            <div className="p-4 bg-blue-50 rounded-xl text-blue-600 mr-6 h-fit">{features[1].icon}</div>
+            <div>
+              <h3 className="text-xl font-bold mb-3 text-black">{features[1].title}</h3>
+              <p className="text-gray-600">{features[1].description}</p>
+            </div>
+          </div>
+
+          {/* Feature 3 - Small */}
+          <div className="md:col-span-2 bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <div className="p-3 bg-blue-50 rounded-lg text-blue-600 mb-4 w-fit">{features[2].icon}</div>
+            <h3 className="text-lg font-bold mb-2 text-black">{features[2].title}</h3>
+            <p className="text-gray-600 text-sm">{features[2].description}</p>
+          </div>
+
+          {/* Feature 4 - Small */}
+          <div className="md:col-span-2 bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <div className="p-3 bg-blue-50 rounded-lg text-blue-600 mb-4 w-fit">{features[3].icon}</div>
+            <h3 className="text-lg font-bold mb-2 text-black">{features[3].title}</h3>
+            <p className="text-gray-600 text-sm">{features[3].description}</p>
+          </div>
+
+          {/* Feature 5 - Small */}
+          <div className="md:col-span-2 bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <div className="p-3 bg-blue-50 rounded-lg text-blue-600 mb-4 w-fit">{features[4].icon}</div>
+            <h3 className="text-lg font-bold mb-2 text-black">{features[4].title}</h3>
+            <p className="text-gray-600 text-sm">{features[4].description}</p>
+          </div>
+
+          {/* Feature 6 - Full Width */}
+          <div className="md:col-span-6 bg-gradient-to-r from-blue-500 to-blue-600 p-8 rounded-xl shadow-sm text-white flex items-center">
+            <div className="p-4 bg-white/20 rounded-xl mr-6">
+              {React.cloneElement(features[5].icon, { className: "w-8 h-8 text-white" })}
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">{features[5].title}</h3>
+              <p className="text-white/90">{features[5].description}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

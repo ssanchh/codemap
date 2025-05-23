@@ -6,8 +6,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-6 md:mb-0">
-            <div className="text-xl font-bold text-black">{"{CodeMap}"}</div>
-            <span className="text-gray-600">RepoScope + GuardRails</span>
+            <div className="text-xl font-bold text-black">CodeMap</div>
+            <span className="text-gray-600">Smart Context for AI Coding</span>
           </div>
 
           <div className="flex space-x-8 mb-6 md:mb-0">
@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 text-center text-gray-500">© 2025 CodeMap. Let your AI code safely at scale.</div>
+        <div className="mt-10 text-center text-gray-500">© 2025 CodeMap. Give your AI the full picture.</div>
       </div>
     </footer>
   )

@@ -1,35 +1,35 @@
-import { AlertTriangle, FileX, Bug } from "lucide-react"
+import { FileX, Brain, AlertTriangle } from "lucide-react"
 
 export default function ProblemSection() {
   const problems = [
     {
       icon: <FileX className="w-8 h-8" />,
-      title: "AI misses files it didn't see",
+      title: "AI misses critical dependencies",
       description:
-        "Your AI assistant only knows about files in the current context, leading to incomplete or broken code suggestions.",
+        "Your AI assistant only sees files in the current context, missing important connections and breaking existing functionality.",
     },
     {
-      icon: <Bug className="w-8 h-8" />,
-      title: "It breaks tests silently",
+      icon: <Brain className="w-8 h-8" />,
+      title: "It hallucinates components and APIs",
       description:
-        "AI changes look good but break existing functionality. You only find out after running tests manually.",
+        "Without full codebase visibility, AI invents non-existent functions, imports, and patterns that don't match your project.",
     },
     {
       icon: <AlertTriangle className="w-8 h-8" />,
-      title: "You waste time debugging after 'Accept'",
-      description: "Every AI suggestion becomes a potential debugging session instead of a productivity boost.",
+      title: "You spend time fixing 'working' code",
+      description:
+        "Code looks perfect in isolation but breaks when integrated because AI didn't understand the bigger picture.",
     },
   ]
 
   return (
-    <section className="py-20 px-6 md:px-10 bg-gray-50">
+    <section id="problem" className="py-20 px-6 md:px-10 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
-            Why today's AI coding tools still cost you time
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">Why AI coding tools miss the mark</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Even the best AI assistants have blind spots that turn productivity gains into debugging sessions.
+            Even the best AI assistants work with incomplete information, leading to code that breaks your existing
+            systems.
           </p>
         </div>
 

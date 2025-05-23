@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+        <script src="https://tally.so/widgets/embed.js" async></script>
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>

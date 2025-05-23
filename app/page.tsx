@@ -10,9 +10,9 @@ import FinalCTA from "@/components/final-cta"
 import Footer from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "CodeMap | RepoScope + GuardRails - Ship AI-generated code with zero nasty surprises",
+  title: "CodeMap | Smart Context for AI Coding - Give your AI the full picture",
   description:
-    "Stop re-prompting, start trusting. RepoScope shows your AI the right files. GuardRails runs your tests in the background. Let your AI code safely at scale.",
+    "Stop AI hallucinations and broken connections. CodeMap builds a live dependency map and injects smart context into every AI prompt. Make your AI coding tools actually understand your codebase.",
 }
 
 export default function LandingPage() {

@@ -10,27 +10,27 @@ export default function FAQSection() {
     {
       question: "Does my code leave my machine?",
       answer:
-        "No, all analysis runs locally. RepoScope builds its dependency map on your machine, and GuardRails runs your tests locally. Your code never leaves your system.",
+        "No, all analysis runs locally. CodeMap builds its dependency map on your machine and processes everything locally. Your code never leaves your system.",
     },
     {
-      question: "Will this slow down Cursor?",
+      question: "Will this slow down my AI coding tools?",
       answer:
-        "Adds 1–2 ms. You won't feel it. RepoScope's indexing happens in the background, and GuardRails runs tests asynchronously without blocking your workflow.",
+        "Adds less than 1ms. You won't feel it. CodeMap's indexing happens in the background, and context injection is nearly instantaneous.",
     },
     {
-      question: "How does it work?",
+      question: "How does CodeMap work?",
       answer:
-        "We index your repo locally, then augment prompts and test changes in real time. RepoScope builds a live dependency graph, while GuardRails monitors file changes and runs relevant tests automatically.",
+        "CodeMap indexes your repository locally, builds a live dependency graph, then automatically augments your AI prompts with the right context. It understands which files are relevant for each request.",
     },
     {
       question: "What programming languages are supported?",
       answer:
-        "We support all major languages including JavaScript, TypeScript, Python, Go, Rust, Java, and more. Language-specific features are continuously being added.",
+        "CodeMap supports all major languages including JavaScript, TypeScript, Python, Go, Rust, Java, and more. Language-specific dependency analysis is continuously being improved.",
     },
     {
       question: "Can I use this with GitHub Copilot?",
       answer:
-        "Yes! While optimized for Cursor, RepoScope + GuardRails also works with GitHub Copilot, VSCode, and other AI coding assistants.",
+        "Yes! While optimized for Cursor, CodeMap also works with GitHub Copilot, VSCode, and other AI coding assistants that accept context.",
     },
     {
       question: "What happens during the beta?",
@@ -40,11 +40,11 @@ export default function FAQSection() {
   ]
 
   return (
-    <section className="py-20 px-6 md:px-10">
+    <section id="faq" className="py-20 px-6 md:px-10">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">Frequently asked questions</h2>
-          <p className="text-xl text-gray-600">Everything you need to know about RepoScope + GuardRails.</p>
+          <p className="text-xl text-gray-600">Everything you need to know about CodeMap.</p>
         </div>
 
         <div className="space-y-4">
